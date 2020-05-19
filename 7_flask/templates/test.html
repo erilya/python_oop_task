@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Flake8</title>
+	</head>
+	<style type="text/css">
+		textarea{
+			background: url('./static/ln.png');
+			background-attachment: local;
+			background-repeat: no-repeat;
+			padding-left: 35px;
+			padding-top: 10px;
+			border-color:#ccc;
+			width: 100%;
+    		height: calc(100% - 120px);
+		}
+	</style>
+	<body>
+		<form action="" method="post">
+			<p>
+				{{ form.file_str.label }}: {{ form.file_str }}
+                {% if form.file_str.errors  %}
+                    {{ form.file_str.errors  }}
+                {% endif %}
+			</p>
+            <p>
+				{{ form.text_str.label }}:
+			</p>
+			<p>
+				{{ form.text_str }}
+
+                {% if form.text_str.errors  %}
+                    {{ form.text_str.errors  }}
+                {% endif %}
+			</p>
+			<p>
+                {{ form.submit_btn }}
+			</p>
+		</form>
+        {% if result %}
+            <ol>
+            {% for r in result %}
+                <ul><b>{{ r }}</b></ul>
+            {% endfor %}
+            </ol>
+        {% endif %}
+	</body>
+</html>
